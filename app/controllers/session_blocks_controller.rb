@@ -1,0 +1,2 @@
+class SessionBlocksController < ApplicationController
+end

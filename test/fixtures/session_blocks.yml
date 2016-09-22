@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2016-09-22
+  max_per_student: 1
+  user: one
+
+two:
+  date: 2016-09-22
+  max_per_student: 1
+  user: two

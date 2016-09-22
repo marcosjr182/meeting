@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start: 2016-09-22 06:39:18
+  end: 2016-09-22 06:39:18
+  max_students: 1
+  session_block: one
+
+two:
+  start: 2016-09-22 06:39:18
+  end: 2016-09-22 06:39:18
+  max_students: 1
+  session_block: two

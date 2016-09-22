@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ccav</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+  	<div class="container">
+    	
+    	<header class="col-sm-12 logo">
+    		ccav
+    	</header>
+  		
+  		<div class="card col-sm-12">
+    		<div class="col-sm-6">
+    			SISTEMA NOME
+    		</div>
+    		<div class="col-sm-6 navbar">
+    			ENTRAR | SAIR
+    		</div>
+    		<%= yield %>
+  		</div>
+
+  	</div>
+  </body>
+</html>
