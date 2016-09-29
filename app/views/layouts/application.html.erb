@@ -13,7 +13,7 @@
   	<div class="container">
     	
     	<header class="col-sm-12 logo">
-    		ccav
+    		monitoria
     	</header>
   		
   		<div class="card col-sm-12">
@@ -25,7 +25,16 @@
     		</div>
     		<%= yield %>
   		</div>
-
+	
+		 	<% if flash[:notice] %>
+		    <div class="notice alert" role="alert"><%= flash[:notice] %>
+		    	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    			<span aria-hidden="true">&times;</span>
+  				</button>
+		    </div>
+		  <% end %>
   	</div>
+
+  
   </body>
 </html>

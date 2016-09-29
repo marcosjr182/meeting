@@ -1,0 +1,7 @@
+<%= form_for(@professor, url: admin_turn_professor_path, method: :turn_professor, html: { class: "form-inline" } ) do |f| %>
+    <div class="form-group col-sm-12">
+      <%= f.text_field :email, class:"col-sm-10 form-control", placeholder:"E-mail do Professor" %>
+      <%= f.submit "Enviar", class: "col-sm-2 btn btn-primary" %>
+      
+    </div>
+<% end %>
