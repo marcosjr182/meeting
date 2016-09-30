@@ -12,27 +12,49 @@
 
   	<div class="container">
     	
-    	<header class="col-sm-12 logo">
-    		monitoria
+    	<header class="col-sm-12">
+    		<a href="" class='logo'>monitoria</a>
     	</header>
   		
-  		<div class="card col-sm-12">
-    		<div class="col-sm-6">
-    			SISTEMA NOME
-    		</div>
-    		<div class="col-sm-6 navbar">
-    			ENTRAR | SAIR
-    		</div>
-    		<%= yield %>
+
+      <div class="card col-sm-12">
+        
+        <% if flash[:notice] %>
+          <div class="notice alert" role="alert"><%= flash[:notice] %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        <% end %>
+    		<div class="row navbar">
+
+          <div class="col-sm-6">
+            <% if not current_page?('/') %>
+              <%= link_to "< VOLTAR",:back, class: 'btn btn-sm btn-outline' %>
+            <% end %>
+          </div>
+          <div class="col-sm-6 btn-group navbar-actions">
+            <% if user_signed_in? %>
+              <span class='btn-sm btn-outline name'> 
+                <%=  current_user.name %>
+              </span>
+              <%= link_to "EDITAR PERFIL", edit_user_registration_path(current_user), class: 'btn btn-sm btn-outline' %>
+              <%= link_to "SAIR", destroy_user_session_path(current_user), class: 'btn btn-sm btn-outline' %>
+            <% else %>
+            <%=  link_to "ENTRAR", new_user_session_path, class: 'btn btn-sm btn-outline' %>
+            <%=  link_to "CADASTRO", new_user_registration_path, class: 'btn btn-sm btn-outline' %>
+            <% end %>
+          
+          </div>
+        </div>
+
+        <div class="col-md-12 page-content">
+    		  <%= yield %>
+        </div>
+
   		</div>
 	
-		 	<% if flash[:notice] %>
-		    <div class="notice alert" role="alert"><%= flash[:notice] %>
-		    	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    			<span aria-hidden="true">&times;</span>
-  				</button>
-		    </div>
-		  <% end %>
+		 	
   	</div>
 
   

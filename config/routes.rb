@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  resources :sessions
   resources :session_blocks
   resources :students
   
   devise_for :users
+
+  root to: "public#index"
   
   get "admin", to: "admin#index", as: :admin 
   namespace :admin do

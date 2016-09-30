@@ -2,14 +2,17 @@
 @import "bootstrap";
 
 $white: #FFFFFF;
-$blue: #136A8A;
+$blue: #a3ccff;
+$l-blue: lighten($blue, 50%);
 $orange: #F2AA42;
+$gray: #eeeeee;
+
 
 body {
 	font-family:"Lato";
-	background: linear-gradient(to left top, #136a8a , #267871); 
 	height:100vh;
 	width:100vw;
+	background: $gray;
 	overflow:hidden;
 }
 
@@ -18,17 +21,24 @@ body {
 	margin:30px auto;
 }
 
-.logo {
-	font-weight:700;
-	color:$white;
+header {
 	text-align:center;
-	font-size:5em;
+	font-weight:700;
+}
+
+.logo {
+	color:$blue;
+	font-size:2em;
 }
 
 .card {
-	border:0;
-	border-radius:10px;
-	padding: 0 15px 45px 15px;
+	border-top:3px solid $blue;
+	border-radius:2px;
+	padding:0 15px 45px 15px;
+}
+.form-actions {
+	text-align:right;
+	padding:0;
 }
 
 #addProfessor {
@@ -50,8 +60,51 @@ body {
 		color: $blue;	
 	}
 }
+.navbar {
+	padding-top:15px;
+	padding-bottom:15px;
+	border-radius:0;
+	background: $blue;
+}
+
+.navbar-actions {
+	text-align: right;
+	.btn {
+		float:none;	
+	}
+}
 
 .collapse {
 	padding:15px;
+}
+
+.btn-outline {
+	color: $white;
+	border-color: $white;
+	&:hover {
+		color: $blue;
+		background: $white;
+	}
+	&.name:hover{
+		color: $white;
+		background: $blue;
+	}
+}
+
+.btn-dashboard {
+	border: 1px solid lighten($blue, 5%);
+	border-radius:5px;
+	padding-top:2em;
+	padding-bottom:1em;
+	color: lighten($blue, 5%);
+	&:hover {
+		border-color: darken($blue,10%);
+		color: darken($blue, 10%);
+	}
+
+}
+.page-content {
+	margin-top:1em;
+	margin-bottom:2em;
 }
 

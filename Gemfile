@@ -32,7 +32,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'bootstrap', '~> 4.0.0.alpha4'
 gem 'devise'
-gem 'omniauth-facebook'
+
 gem 'kaminari'
 
 group :development, :test do

@@ -23,11 +23,11 @@ class AdminController < ApplicationController
 	private
 		def is_admin
 			if not user_signed_in?
-				flash.notice "Acesso não autorizado."
+				flash.notice = "Acesso não autorizado."
 				redirect_to root_path
 			else
 				if not current_user.admin?
-					flash.notice "Acesso não autorizado."
+					flash.notice = "Acesso não autorizado."
 					redirect_to root_path
 				end
 			end
