@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get "admin", to: "admin#index", as: :admin 
   namespace :admin do
   	post "turn_professor", as: :turn_professor
+    resources :session_blocks, controller: :session_blocks
   end
 	
 end

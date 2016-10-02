@@ -28,18 +28,18 @@
         <% end %>
     		<div class="row navbar">
 
-          <div class="col-sm-6">
+          <div class="col-sm-3">
             <% if not current_page?('/') %>
               <%= link_to fa_icon('chevron-left')+" VOLTAR",:back, class: 'btn btn-sm btn-outline' %>
             <% end %>
           </div>
-          <div class="col-sm-6 btn-group navbar-actions">
+          <div class="col-sm-9 btn-group navbar-actions">
             <% if user_signed_in? %>
               <span class='btn-sm btn-outline name'> 
                 <%=  current_user.name %>
               </span>
               <%= link_to "EDITAR PERFIL", edit_user_registration_path(current_user), class: 'btn btn-sm btn-outline' %>
-              <%= link_to "SAIR", destroy_user_session_path(current_user), class: 'btn btn-sm btn-outline' %>
+              <%= link_to "SAIR", destroy_user_session_path, method: :delete, class: 'btn btn-sm btn-outline' %>
             <% else %>
             <%=  link_to "ENTRAR", new_user_session_path, class: 'btn btn-sm btn-outline' %>
             <%=  link_to "CADASTRO", new_user_registration_path, class: 'btn btn-sm btn-outline' %>

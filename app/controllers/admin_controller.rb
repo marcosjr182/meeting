@@ -1,10 +1,13 @@
 class AdminController < ApplicationController
 	before_action :authenticate_user!
-	before_filter :is_admin
+	before_filter :is_student
 
 	def index
+		@on_hold = User.where(role: :student, status: :registered)
 		@professors = User.where(role: :professor)
 		@students = Student.all
+		render "admin/dashboard/professor" if current_user.professor?
+		render "admin/dashboard/admin" if current_user.admin?
 	end
 
 	def turn_professor
@@ -21,12 +24,12 @@ class AdminController < ApplicationController
 	end
 
 	private
-		def is_admin
+		def is_student
 			if not user_signed_in?
 				flash.notice = "Acesso não autorizado."
 				redirect_to root_path
 			else
-				if not current_user.admin?
+				if current_user.student?
 					flash.notice = "Acesso não autorizado."
 					redirect_to root_path
 				end
